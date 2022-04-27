@@ -1,24 +1,99 @@
 {
-  "name": "tvrooz",
+  "name": "nextjs-boilerplate",
   "version": "0.1.0",
   "private": true,
+  "keywords": [
+    "nextjs",
+    "next",
+    "apollo",
+    "graphql",
+    "i18n",
+    "boilerplate"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:css": "stylelint src/**/*.ts"
   },
   "dependencies": {
+    "@apollo/client": "^3.6.0",
+    "@plaza-ui/core": "^0.6.30",
+    "@plaza-ui/hooks": "^0.6.30",
+    "@plaza-ui/icons": "^0.6.30",
+    "@plaza-ui/styles": "^0.6.30",
+    "@plaza-ui/utils": "^0.6.30",
+    "@popperjs/core": "^2.11.5",
+    "@svgr/webpack": "^6.2.1",
+    "@types/lodash.isequal": "^4.5.6",
+    "apollo-upload-client": "^17.0.0",
+    "axios": "^0.27.1",
+    "camelcase": "^6.3.0",
+    "color": "^4.2.3",
+    "color-convert": "^2.0.1",
+    "cookie": "^0.5.0",
+    "deepmerge": "^4.2.2",
+    "formik": "^2.2.9",
+    "graphql": "^16.4.0",
+    "js-cookie": "^3.0.1",
+    "lodash.isequal": "^4.5.0",
     "next": "12.1.5",
-    "react": "18.1.0",
-    "react-dom": "18.1.0"
+    "next-i18next": "^11.0.0",
+    "next-with-apollo": "^5.3.0",
+    "react": "17.0.2",
+    "react-cookie": "^4.1.1",
+    "react-dom": "17.0.2",
+    "react-select": "^5.3.0",
+    "react-toastify": "^8.2.0",
+    "react-transition-group": "^4.4.2",
+    "styled-components": "^5.3.5",
+    "uuid": "^8.3.2",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
+    "@stylelint/postcss-css-in-js": "^0.37.2",
+    "@types/apollo-upload-client": "^17.0.0",
+    "@types/color-convert": "^2.0.0",
+    "@types/js-cookie": "^3.0.2",
     "@types/node": "17.0.29",
-    "@types/react": "18.0.8",
-    "@types/react-dom": "18.0.0",
+    "@types/react": "17.0.2",
+    "@types/react-dom": "17.0.2",
+    "@types/styled-components": "^5.1.25",
+    "@types/uuid": "^8.3.4",
+    "@typescript-eslint/eslint-plugin": "^5.21.0",
+    "@typescript-eslint/parser": "^5.21.0",
     "eslint": "8.14.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-next": "12.1.5",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.5.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.4.1",
+    "prettier": "^2.6.2",
+    "stylelint": "^14.8.0",
+    "stylelint-config-recommended": "^7.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-custom-processor-loader": "^0.6.0",
+    "stylelint-processor-styled-components": "^1.10.0",
     "typescript": "4.6.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "./**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "yarn format",
+      "yarn lint",
+      "git add"
+    ]
   }
 }
